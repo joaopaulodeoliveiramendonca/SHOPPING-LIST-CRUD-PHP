@@ -32,10 +32,6 @@ A estrutura do projeto é organizada da seguinte maneira:
       add.php                   # Formulário para adicionar novos itens
       edit.php                  # Formulário para editar itens existentes
   /public
-    /css
-      style.css                 # Arquivo de estilos CSS
-    /js
-      script.js                 # Arquivo JavaScript (caso necessário)
     index.php                   # Roteamento e controle da aplicação
   /config
     database.php                # Configuração da conexão com o banco de dados
