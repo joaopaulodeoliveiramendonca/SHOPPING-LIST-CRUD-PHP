@@ -1,7 +1,7 @@
 <?php
 
 // Incluir o modelo
-require_once 'app/models/Lista.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/models/Lista.php';
 
 class ListaController {
     private $listaModel;
@@ -15,12 +15,12 @@ class ListaController {
         $itens = $this->listaModel->read();
 
         // Exibir a view index.php
-        require_once 'app/views/index.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/index.php';
     }
 
     // Exibir o formulário para adicionar um novo item
     public function create() {
-        require_once 'app/views/add.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/add.php';
     }
 
     // Adicionar um novo item
@@ -60,7 +60,7 @@ class ListaController {
         $this->listaModel->id = $id;
         $item = $this->listaModel->readOne()->fetch(PDO::FETCH_ASSOC);
 
-        require_once 'app/views/edit.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/app/views/edit.php';
     }
 
     // Atualizar um item

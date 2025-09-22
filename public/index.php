@@ -1,9 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // Incluir a classe de banco de dados
-require_once '../config/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
 
 // Incluir o controlador
-require_once '../app/controllers/ListaController.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/app/controllers/ListaController.php';
 
 // Iniciar a sessão para exibir mensagens de sucesso e erro
 session_start();
@@ -20,6 +23,9 @@ $controller = new ListaController($db);
 
 // Roteamento simples
 switch ($url) {
+    case '':
+        $controller->index();
+        break;
     case '/':
         $controller->index();
         break;

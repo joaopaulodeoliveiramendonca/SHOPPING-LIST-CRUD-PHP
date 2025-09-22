@@ -1,6 +1,6 @@
-# CRUD de Lista de Compras em PHP - MVC e MySQL
+# CRUD de Lista de Compras em PHP - MVC, MySQL e Bootstrap
 
-Este projeto implementa um sistema de CRUD (Create, Read, Update, Delete) para uma lista de compras utilizando **PHP**, **MySQL** e a arquitetura **MVC** (Model-View-Controller). O objetivo é permitir a gestão de itens de uma lista de compras, com operações básicas de CRUD.
+Este projeto implementa um sistema de CRUD (Create, Read, Update, Delete) para uma lista de compras utilizando **PHP**, **MySQL**, **Bootstrap** e a arquitetura **MVC** (Model-View-Controller). O objetivo é permitir a gestão de itens de uma lista de compras, com operações básicas de CRUD.
 
 ## Funcionalidades
 
@@ -31,9 +31,6 @@ A estrutura do projeto é organizada da seguinte maneira:
       index.php                 # Página principal para listar itens
       add.php                   # Formulário para adicionar novos itens
       edit.php                  # Formulário para editar itens existentes
-  /core
-    Controller.php              # Classe base para os controladores
-    Database.php                # Conexão com o banco de dados
   /public
     /css
       style.css                 # Arquivo de estilos CSS
@@ -58,8 +55,8 @@ A estrutura do projeto é organizada da seguinte maneira:
    Clone o repositório em seu ambiente local ou servidor.
 
    ```bash
-   git clone https://github.com/seu-usuario/crud-lista-compras.git
-   cd crud-lista-compras
+   git clone https://github.com/joaopaulodeoliveiramendonca/SHOPPING-LIST-CRUD-PHP.git
+   cd SHOPPING-LIST-CRUD-PHP
    ```
 
 2. **Configuração do Banco de Dados**:
@@ -107,10 +104,12 @@ A estrutura do projeto é organizada da seguinte maneira:
 
    Exemplo de conteúdo para o `.htaccess`:
 
-   ```apache
-   RewriteEngine On
-   RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-   ```
+```apache
+RewriteEngine On
+
+# Reescreve todas as URLs para o index.php
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
+```
 
    Isso fará com que todas as requisições sejam redirecionadas para o `index.php` para serem processadas pelo controlador.
 
@@ -153,7 +152,6 @@ As **Views** são responsáveis por exibir os dados ao usuário. Elas contêm os
 
 - **Segurança**: Implementar medidas de segurança adicionais, como validação mais robusta dos dados e proteção contra SQL Injection, XSS e CSRF.
 - **Autenticação**: Adicionar um sistema de login para restringir o acesso às operações de CRUD.
-- **Design**: Melhorar o layout usando frameworks CSS como **Bootstrap** ou **TailwindCSS**.
 - **Pesquisa e Filtros**: Adicionar filtros de pesquisa para facilitar a busca por itens específicos na lista.
 
 ## Licença
